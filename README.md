@@ -2,6 +2,9 @@
 
 This is a toy currency converter written in C. Shouldn't be used for anything important.
 
+## Capabilities:
+Can convert between USD, EUR and GTQ.
+
 ## Requirements:
 - A C capable compiler.
 - Git (Optional).
