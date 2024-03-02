@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdint.h>
 #include <string.h>
 
 #define INPUT_MAX_CHAR 8
 #define CURRENCY_ISO_MAX_CHAR 3
-#define USA_DOLLAR "USD"
-#define GTM_QUETZAL "GTQ"
-#define EU_EURO "EUR"
+#define USA_DOLLAR_ISO "USD"
+#define GTM_QUETZAL_ISO "GTQ"
+#define EU_EURO_ISO "EUR"
 #define USD_TO_GTQ 0.127938917f
 #define EUR_TO_GTQ 0.117887803f
 #define USD_TO_EUR 1.085187190f
@@ -18,7 +19,7 @@ typedef enum {
     CURRENCY_ISO_MAX = 3
 } CurrencyISO;
 
-int main()
+int32_t main()
 {
     CurrencyISO currencyFromISO = CURRENCY_ISO_MAX;
     CurrencyISO currencyToISO = CURRENCY_ISO_MAX;
@@ -44,15 +45,15 @@ int main()
         char currencyA[CURRENCY_ISO_MAX_CHAR + 1] = { fromToCurrency[0], fromToCurrency[1], fromToCurrency[2], '\0'};
         char currencyB[CURRENCY_ISO_MAX_CHAR + 1] = { fromToCurrency[4], fromToCurrency[5], fromToCurrency[6], '\0'};
         {
-            if (strcmp(currencyA, USA_DOLLAR) == 0)
+            if (strcmp(currencyA, USA_DOLLAR_ISO) == 0)
             {
                 currencyFromISO = CURRENCY_ISO_USD;
             }
-            else if (strcmp(currencyA, EU_EURO) == 0)
+            else if (strcmp(currencyA, EU_EURO_ISO) == 0)
             {
                 currencyFromISO = CURRENCY_ISO_EUR;
             }
-            else if (strcmp(currencyA, GTM_QUETZAL) == 0)
+            else if (strcmp(currencyA, GTM_QUETZAL_ISO) == 0)
             {
                 currencyFromISO = CURRENCY_ISO_GTQ;
             }
@@ -62,15 +63,15 @@ int main()
                 continue;
             }
 
-            if (strcmp(currencyB, USA_DOLLAR) == 0)
+            if (strcmp(currencyB, USA_DOLLAR_ISO) == 0)
             {
                 currencyToISO = CURRENCY_ISO_USD;
             }
-            else if (strcmp(currencyB, EU_EURO) == 0)
+            else if (strcmp(currencyB, EU_EURO_ISO) == 0)
             {
                 currencyToISO = CURRENCY_ISO_EUR;
             }
-            else if (strcmp(currencyB, GTM_QUETZAL) == 0)
+            else if (strcmp(currencyB, GTM_QUETZAL_ISO) == 0)
             {
                 currencyToISO = CURRENCY_ISO_GTQ;
             }
